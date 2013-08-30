@@ -1,0 +1,11 @@
+{
+  "name": "script2Image",
+  "version": "0.0.1",
+  "description": "To convert javascript files to an image",
+  "author": "Madan",
+  "license": "BSD",
+  "devDependencies": {
+    "canvas": "latest",
+	"connect" : "latest"
+  }
+}

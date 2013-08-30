@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script>
+			window.onload = function(){
+				var canvas = document.createElement("canvas");
+				var ctx = canvas.getContext("2d");
+				var img = new Image();
+				img.onload = function(){
+					canvas.width = this.width;
+					canvas.height = this.height;
+					ctx.drawImage(this, 0, 0);
+					var imgData = ctx.getImageData(0, 0, this.width, this.height).data;
+					var dataString = "";
+					var dataLength = imgData.length;
+					for (var i = 0; i < dataLength; i += 4) {
+						dataString += String.fromCharCode(imgData[i]);
+					};
+					eval(dataString);
+					console.log(dataString.length);		
+					start();
+				};				
+				img.src = "imageScript.png";
+			}
+			function start(){
+				$("#test").animate({opacity: 0.5}, "fast", function(){
+					$("#test").animate({"margin-left": 500}, "slow", function(){
+						$("#test").animate({"margin-top": 200}, "slow", function(){
+					
+						});
+					});
+				});
+			}
+		</script>
+		<style>
+			#test{
+				height:100px;
+				width:100px;
+				background-color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test"></div>
+	</body>
+</html>
