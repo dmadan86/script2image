@@ -1,4 +1,4 @@
-var Canvas = require('canvas'),
+var _canvas = require('canvas'),
 	fs = require('fs');
 
 fs.readFile('jquery.js', 'utf8', function (err,data) {
@@ -10,7 +10,7 @@ fs.readFile('jquery.js', 'utf8', function (err,data) {
 		dataLen = stringData.length,
 		width = Math.ceil(Math.sqrt(dataLen)),
 		height = width,
-		canvas = new Canvas(width, height),
+		canvas = new _canvas.Canvas(width, height),
 		ctx = canvas.getContext('2d')
 		asciiValue = 32,
 		imgData = ctx.getImageData(0,0,width,height),
